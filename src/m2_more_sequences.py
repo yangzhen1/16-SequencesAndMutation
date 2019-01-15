@@ -10,8 +10,8 @@ for ITERATING through SEQUENCES, including selections from:
   -- Looking at two sequences in parallel
 
 Authors: David Mutchler, Valerie Galluzzi, Mark Hays, Amanda Stouder,
-         their colleagues and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         their colleagues and Zhen Yang.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 
 def main():
@@ -78,6 +78,13 @@ def run_test_shortest_string():
 
 
 def shortest_string(strings):
+
+    iom = 0
+    for k in range(1, len(strings)):
+        if len(strings[k]) < len(strings[iom]):
+            iom = k
+
+    return strings[iom]
     """
     What comes in:
       -- a non-empty sequence of strings
@@ -103,7 +110,7 @@ def shortest_string(strings):
       :type strings: list[str]   or tuple(str)
     """
     # ------------------------------------------------------------------
-    # TODO: 2. Implement and test this function.
+    # DONE: 2. Implement and test this function.
     #     The testing code is already written for you (above).
     # ------------------------------------------------------------------
 
@@ -149,6 +156,12 @@ def run_test_index_of_largest_number():
 
 
 def index_of_largest_number(numbers, n):
+    ioln = 0
+    for k in range(0, len(numbers)):
+        if k < n and numbers[k] > numbers[ioln]:
+            ioln = k
+    return ioln
+
     """
     What comes in:
       -- a sequence of numbers
@@ -180,7 +193,7 @@ def index_of_largest_number(numbers, n):
 
     """
     # ------------------------------------------------------------------
-    # TODO: 3. Implement and test this function.
+    # DONE: 3. Implement and test this function.
     #     The testing code is already written for you (above).
     # ------------------------------------------------------------------
 
@@ -218,6 +231,14 @@ def run_test_number_of_stutters():
 
 
 def number_of_stutters(s):
+    count = 0
+    sl = 0
+    for k in range(1, len(s)):
+        if s[k] == s[sl]:
+            count = count + 1
+        sl = sl + 1
+    return count
+
     """
     What comes in:
       -- a string s
@@ -235,7 +256,7 @@ def number_of_stutters(s):
        :type s: str
     """
     # ------------------------------------------------------------------
-    # TODO: 4. Implement and test this function.
+    # DONE Implement and test this function.
     #     The testing code is already written for you (above).
     # ------------------------------------------------------------------
 
@@ -280,6 +301,10 @@ def run_test_is_palindrome():
 
 
 def is_palindrome(s):
+    fw = []
+    bw = []
+    for k in range(0, len(s)):
+        
     """
     What comes in:
       -- a string s that (in this simple version of the palindrome
