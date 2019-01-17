@@ -301,10 +301,15 @@ def run_test_is_palindrome():
 
 
 def is_palindrome(s):
-    fw = []
-    bw = []
-    for k in range(0, len(s)):
-        
+    fw = ''
+    for k in range(len(s)-1, -1, -1):
+        fw += s[k]
+    print(fw)
+    if fw == s:
+        return True
+    return False
+
+
     """
     What comes in:
       -- a string s that (in this simple version of the palindrome
@@ -333,7 +338,7 @@ def is_palindrome(s):
       :type s: str
     """
     # ------------------------------------------------------------------
-    # TODO: 5. Implement and test this function.
+    # DONE: 5. Implement and test this function.
     #     The testing code is already written for you (above).
     #
     ####################################################################
@@ -372,6 +377,12 @@ def run_test_count_same():
 
 
 def count_same(sequence1, sequence2):
+    count = 0
+    for k in range(len(sequence1)):
+        if sequence1[k] == sequence2[k]:
+            count += 1
+    return count
+
     """
     What comes in:
       -- two sequences that have the same length
@@ -400,7 +411,7 @@ def count_same(sequence1, sequence2):
       type: sequence2: tuple or list or string
     """
     # ------------------------------------------------------------------
-    # TODO: 6. Implement and test this function.
+    # DONE: 6. Implement and test this function.
     #     The testing code is already written for you (above).
     # ------------------------------------------------------------------
 
